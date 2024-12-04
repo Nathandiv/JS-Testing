@@ -22,3 +22,19 @@ test('two plus two is four', () => {
       }
     }
   });
+
+// Simulate the fetchData function
+function fetchData() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('peanut butter'); // Simulate fetching data asynchronously
+    }, 1000); // Simulate a 1-second delay
+  });
+}
+
+// Jest test case
+test('the data is peanut butter', () => {
+  return fetchData().then(data => {
+    expect(data).toBe('peanut butter');
+  });
+});
