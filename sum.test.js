@@ -23,12 +23,15 @@ test('two plus two is four', () => {
     }
   });
 
+// using Promises
+
+   
 // Simulate the fetchData function
 function fetchData() {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve('peanut butter'); // Simulate fetching data asynchronously
-    }, 1000); // Simulate a 1-second delay
+    }, 1000); 
   });
 }
 
@@ -37,4 +40,13 @@ test('the data is peanut butter', () => {
   return fetchData().then(data => {
     expect(data).toBe('peanut butter');
   });
+});
+
+
+
+// using Async/Await
+
+test('the data is peanut butter', async () => {
+  const data = await fetchData();
+  expect(data).toBe('peanut butter');
 });
